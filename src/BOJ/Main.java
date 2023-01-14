@@ -28,5 +28,9 @@ public class Main {
 
         // string -> List<Character>
         List<Character> op = str.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+
+        // int[] 배열 출력
+        int[] memo = new int[3];
+        Arrays.stream(memo).mapToObj(Objects::toString).collect(Collectors.joining(" "));
     }
 }
