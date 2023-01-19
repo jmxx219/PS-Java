@@ -7,7 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class RemoteControl_1107 {
+// 틀림 - 원인 모름 ,,
+public class RemoteControl_1107_F {
     private static BufferedReader br;
     private static StringTokenizer st;
     private static int N;
