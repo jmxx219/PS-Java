@@ -40,9 +40,16 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
+        String[] input = br.readLine().split(" ");
+
         // 버퍼 EOF 까지 입력
         while(st.hasMoreTokens()) {
             System.out.println(st.nextToken());
         }
+
+        // 출력
+        StringBuilder sb = new StringBuilder();
+        sb.append("a");
+        System.out.println(sb);
     }
 }
