@@ -35,12 +35,18 @@ public class Main {
         Arrays.toString(memo);
         Arrays.stream(memo).mapToObj(Objects::toString).collect(Collectors.joining(" "));
 
+
         // 버퍼 입력
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
+        // String -> String[]
         String[] input = br.readLine().split(" ");
+
+        // String -> int[]
+        int[] arr = Arrays.stream(br.readLine().split("")).mapToInt(Integer::parseInt).toArray();
+
 
         // 버퍼 EOF 까지 입력
         while(st.hasMoreTokens()) {
