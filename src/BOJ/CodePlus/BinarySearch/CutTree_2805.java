@@ -15,7 +15,6 @@ public class CutTree_2805 {
 
 
     public static long solve() {
-        long ans = 0;
         long start = 0;
         long end = maxHeight;
 
@@ -28,7 +27,6 @@ public class CutTree_2805 {
                 }
             }
             if (sum >= M) {
-                if (ans < mid) ans = mid;
                 start = mid + 1;
             } else {
                 end = mid - 1;
