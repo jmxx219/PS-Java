@@ -1,13 +1,11 @@
-package BOJ.CodePlus.Graph;
+package BOJ.CodePlus.BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class RedGreenColorWeakness {
+public class RedGreenColorWeakness_10026 {
     private static BufferedReader br;
     private static StringTokenizer st;
     private static int N;

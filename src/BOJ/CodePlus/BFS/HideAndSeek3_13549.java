@@ -1,4 +1,4 @@
-package BOJ.CodePlus.Graph;
+package BOJ.CodePlus.BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
