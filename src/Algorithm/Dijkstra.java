@@ -39,7 +39,7 @@ public class Dijkstra { // 가중치가 있는 최단 경로
 
             if(dist[here] < cost) continue;
 
-            for(var next : adj.get(here)) {
+            for(Node next : adj.get(here)) {
                 if(next.cost != 0) {
                     int nextDist = next.cost + cost;
                     if(nextDist < dist[next.node]) {
