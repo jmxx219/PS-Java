@@ -3,7 +3,7 @@ package Programmers.past;
 import java.util.Arrays;
 
 // 양궁 대회
-public class Target {
+public class 양궁대회 {
     public static int[] answer;
     public static int[] ryan;
     public static int[] apeach;
