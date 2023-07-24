@@ -29,6 +29,7 @@ public class Floyd_Warshall {
         for(int k = 1; k <= V; k++) { // 중간에 방문하는 정점(i -> k -> j)
             for(int i = 1; i <= V; i++) {
                 for(int j = 1; j <= V; j++) {
+                    if(edge[i][k] == INF || edge[k][j] == INF) continue;
                     edge[i][j] = Math.min(edge[i][j], edge[i][k] + edge[k][j]);
                 }
             }
