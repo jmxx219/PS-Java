@@ -1,4 +1,4 @@
-package Etc.SWExpertAcademy;
+package SWExpertAcademy;
 
 import java.util.Scanner;
 
