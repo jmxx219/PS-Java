@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Guess_1248 {
+public class
+Guess_1248 {
     private static BufferedReader br;
     private static StringTokenizer st;
     private static int N;

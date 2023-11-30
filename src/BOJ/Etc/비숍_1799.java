@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// F
+// FFFF -> 시간초과(흑색과 백색 칸 구분)
 public class 비숍_1799 {
     private static BufferedReader br;
     private static StringTokenizer st;
     private static int N;
     private static int[][] map;
-    private static int res;
+    private static int black_cnt;
+    private static int white_cnt;
     private static final int[] dy = {-1, -1};
     private static final int[] dx = {-1, 1};
 
@@ -33,23 +34,26 @@ public class 비숍_1799 {
         return true;
     }
 
-    private static void solve(int y, int x, int cnt, boolean[][] bishop) {
-        if(y == N) {
-            res = Math.max(res, cnt);
+    private static void solve(int y, int x, int cnt, boolean black, boolean[][] bishop) {
+        if(y >= N) {
+            if(black) black_cnt = Math.max(black_cnt, cnt);
+            else white_cnt = Math.max(white_cnt, cnt);
             return;
         }
 
-        if(x == N){
-            solve(y + 1, 0, cnt, bishop);
+        if(x >= N){
+            int ny = y + 1;
+            int nx = ((black && ny % 2 == 0) || (!black && ny % 2 == 1)) ? 0 : 1;
+            solve(ny, nx, cnt, black, bishop);
             return;
         }
 
         if(map[y][x] == 1 && !bishop[y][x] && isOk(y, x, bishop)) {
             bishop[y][x] = true;
-            solve(y, x + 1, cnt + 1, bishop);
+            solve(y, x + 2, cnt + 1, black, bishop);
             bishop[y][x] = false;
         }
-        solve(y, x + 1, cnt, bishop);
+        solve(y, x + 2, cnt, black, bishop);
     }
 
     public static void main(String[] args) throws IOException {
@@ -65,8 +69,10 @@ public class 비숍_1799 {
             }
         }
 
-        res = 0;
-        solve(0, 0, 0, new boolean[N][N]);
+        black_cnt = white_cnt = 0;
+        solve(0, 0, 0, true, new boolean[N][N]);
+        solve(0, 1, 0, false, new boolean[N][N]);
+        int res = black_cnt + white_cnt;
         System.out.println(res);
     }
 }

@@ -11,7 +11,7 @@ public class Budget_2512 {
     private static StringTokenizer st;
     private static int N;
     private static int[] budget;
-    private static int M;
+    private static int M; 
     
     public static int calc(int mid) {
         int sum = 0;
