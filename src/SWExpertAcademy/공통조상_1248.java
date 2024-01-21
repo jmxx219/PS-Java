@@ -18,14 +18,13 @@ public class 공통조상_1248 {
     private static int[] parent;
     private static int[] subtree;
 
-    private static int  dfs(int parentNode, int currNode, boolean[] check) {
-        check[currNode] = true;
+    private static int  dfs(int parentNode, int currNode) {
         depth[currNode] = depth[parentNode] + 1;
         parent[currNode] = parentNode;
 
         for(int next: graph.get(currNode)) {
-            if(!check[next]) {
-                subtree[currNode] += dfs(currNode, next, check);
+            if(parentNode != next) {
+                subtree[currNode] += dfs(currNode, next);
             }
         }
 
@@ -56,6 +55,7 @@ public class 공통조상_1248 {
         st = new StringTokenizer(br.readLine());
         T = Integer.parseInt(st.nextToken());
 
+        StringBuilder sb = new StringBuilder();
         for (int t = 0; t < T; t++) {
             st = new StringTokenizer(br.readLine());
             V = Integer.parseInt(st.nextToken());
@@ -79,10 +79,11 @@ public class 공통조상_1248 {
                 graph.get(a).add(b);
             }
 
-            dfs(0, 1, new boolean[V + 1]);
+            dfs(0, 1);
             int commonP = LCA(nodeA, nodeB);
 
-            System.out.println("#" + (t + 1) + " " + commonP + " " + subtree[commonP]);
+            sb.append("#" + (t + 1) + " " + commonP + " " + subtree[commonP] + "\n");
         }
+        System.out.println(sb);
     }
 }
