@@ -5,3 +5,6 @@
 *.ipr
 out/
 Test/
+src/algostudy/.DS_Store
+src/.DS_Store
+.DS_Store
