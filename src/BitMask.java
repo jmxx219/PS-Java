@@ -1,5 +1,3 @@
-package BOJ;
-
 public class BitMask {
 
     public static void main(String[] args) {
